@@ -64,6 +64,3 @@ class Ship(Sprite):
                 if self.index >= len(self.images):
                     self.explode = False
                     self.index = 0
-
-
-

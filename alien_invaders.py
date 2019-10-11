@@ -58,18 +58,18 @@ def run():
                     ship.hit = False
                     ship.explode = False
                 else:
-                    if random.randint(1,1000) == 1000 and len(ufos.sprites()) == 0:
+                    if random.randint(1, 1000) == 1000 and len(ufos.sprites()) == 0:
                         ufo = UFO(settings, screen, settings.alien_width, settings.alien_height)
                         ufos.add(ufo)
                         pygame.mixer.Sound("Sounds/cartoon_flying_ufo.wav").play()
-                    gf.update_bullets(settings, screen, stats, sb, ship, aliens, bullets, alien_bullets, ufos, alien_explosions)
-                    gf.update_aliens(settings, screen, stats, sb, ship, aliens, bullets, alien_bullets, ufos, alien_explosions)
-
-
-
+                    gf.update_bullets(settings, screen, stats, sb, ship, aliens, bullets, alien_bullets, ufos,
+                                      alien_explosions)
+                    gf.update_aliens(settings, screen, stats, sb, ship, aliens, bullets, alien_bullets, ufos,
+                                     alien_explosions)
 
         # Draw objects
-        gf.update_screen(settings, screen, stats, sb, ship, aliens, bullets, play_button, alien_bullets, ufos, alien_explosions)
+        gf.update_screen(settings, screen, stats, sb, ship, aliens, bullets, play_button, alien_bullets, ufos,
+                         alien_explosions)
 
     sys.exit()
 

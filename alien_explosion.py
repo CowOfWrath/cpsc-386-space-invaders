@@ -5,6 +5,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class Alien_Explosion(Sprite):
     def __init__(self, screen, width, height, center):
         super(Alien_Explosion, self).__init__()

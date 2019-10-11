@@ -32,7 +32,6 @@ def create_fleet(settings, screen, aliens):
             create_alien(settings, screen, aliens, alien_num, row, (row * 2) + ((row + alien_num) % 2))
 
 
-
 def fire_bullet(settings, screen, ship, bullets):
     if len(bullets) < settings.bullet_max:
         pygame.mixer.Sound("Sounds/laser4.wav").play()
@@ -137,10 +136,12 @@ def check_bullet_alien_collisions(settings, screen, stats, sb, aliens, bullets, 
         bullets.empty()
         create_fleet(settings, screen, aliens)
 
+
 def ship_explode(ship):
     pygame.mixer.Sound("Sounds/retro_video_game_sfx_explode.wav").play()
     ship.explode = True
     ship.hit = True
+
 
 def ship_hit(settings, screen, stats, sb, ship, aliens, bullets, alien_bullets):
     if stats.ship_lives > 0:
@@ -196,12 +197,14 @@ def update_aliens(settings, screen, stats, sb, ship, aliens, bullets, alien_bull
             b = Alien_Bullet(settings, screen, a)
             alien_bullets.add(b)
 
+
 def check_bullet_ship_collisions(settings, screen, stats, sb, ship, aliens, bullets, alien_bullets):
     for b in alien_bullets:
         if pygame.sprite.collide_rect(ship, b):
             ship_explode(ship)
             sb.prep_score()
             check_high_score(stats, sb)
+
 
 def update_bullets(settings, screen, stats, sb, ship, aliens, bullets, alien_bullets, ufos, alien_explosions):
     bullets.update()
@@ -218,7 +221,8 @@ def update_bullets(settings, screen, stats, sb, ship, aliens, bullets, alien_bul
     check_bullet_ship_collisions(settings, screen, stats, sb, ship, aliens, bullets, alien_bullets)
 
 
-def update_screen(settings, screen, stats, sb, ship, aliens, bullets, play_button, alien_bullets, ufos, alien_explosions):
+def update_screen(settings, screen, stats, sb, ship, aliens, bullets, play_button, alien_bullets, ufos,
+                  alien_explosions):
     # update images on screen and display screen
     screen.fill(settings.bg_color)
     ship.draw()

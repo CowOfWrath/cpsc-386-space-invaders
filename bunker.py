@@ -5,6 +5,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class Bunker(Sprite):
     def __init__(self, settings, screen, width, height):
         super(Bunker, self).__init__()

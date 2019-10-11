@@ -5,6 +5,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class UFO(Sprite):
     def __init__(self, settings, screen, width, height):
         super(UFO, self).__init__()
@@ -39,7 +40,6 @@ class UFO(Sprite):
             self.image = self.images[self.index]
 
         self.rect.x += 10
-
 
     def check_edges(self):
         if self.rect.left >= self.screen.get_rect().right:
